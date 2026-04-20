@@ -25,12 +25,12 @@ def create_ics_file(tasks, start_date):
             remaining_time -= event_duration
     
     output_filename = f"SBNCal_{datetime.today().strftime('%Y-%m-%d')}.ics"
-    output_path = os.path.join(os.getcwd(), output_filename)
+    output_path = os.path.join(os.getcwd(),"Output_icals", output_filename)
     
     with open(output_path, 'wb') as f:
         f.write(cal.to_ical())
     
-    messagebox.showinfo("Success", f"ICS file '{output_filename}' created successfully in {os.getcwd()}.")
+    messagebox.showinfo("Success", f"ICS file '{output_filename}' created successfully in {os.path.join(os.getcwd(),"Output_icals")}.")
 
 # Function to get tasks from user through a GUI
 def get_tasks_from_user():
